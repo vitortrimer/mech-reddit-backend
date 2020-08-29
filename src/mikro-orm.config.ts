@@ -1,4 +1,4 @@
-import { Post } from "./entities/Posts";
+import { Post } from "./entities/Post";
 import { __prod__ } from "./constants";
 import { MikroORM } from "@mikro-orm/core"
 import path from 'path'
@@ -12,6 +12,7 @@ export default {
   entities: [Post],
   dbName: 'mechreddit',
   password: '123',
+  port: 5433,
   type: 'postgresql',
   debug: !__prod__
 } as Parameters<typeof MikroORM.init>[0]

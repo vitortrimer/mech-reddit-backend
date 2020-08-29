@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const Posts_1 = require("./entities/Posts");
+const Post_1 = require("./entities/Post");
 const constants_1 = require("./constants");
 const path_1 = __importDefault(require("path"));
 exports.default = {
@@ -11,9 +11,10 @@ exports.default = {
         path: path_1.default.join(__dirname, './migrations'),
         pattern: /^[\w-]+\d+\.[tj]s$/,
     },
-    entities: [Posts_1.Post],
+    entities: [Post_1.Post],
     dbName: 'mechreddit',
     password: '123',
+    port: 5433,
     type: 'postgresql',
     debug: !constants_1.__prod__
 };
